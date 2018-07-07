@@ -1,0 +1,50 @@
+htlm{}
+
+body{
+  background-color: white;
+}
+
+
+.nav{
+    list-style:none;
+    bottom:0;
+    padding:0;
+    text-align:center;
+    overflow: hidden;
+}
+
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:20px 30px;
+    text-decoration:none;
+    font-family: 'Contrail One', cursive;
+    color: white;
+    font-size: 17px;
+}
+
+.effect-1 a {
+	color: #a5b1c2;
+	font-weight: 700;
+	text-shadow: none;
+  text-decoration: none;
+}
+
+.effect-1 a::before {
+	color: #000000;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.effect-1 a:hover::before,
+.effect-1 a:focus::before {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
+}

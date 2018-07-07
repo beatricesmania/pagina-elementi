@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Contrail+One');
+
+html{}
+
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+  .fade-in {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1.5s;
+    -moz-animation-duration:1.5s;
+    animation-duration:1.5s;
+  }
+  .fade-in.two {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay:0.5s;
+  animation-delay: 0.5s;
+}
+
+body{
+  background-color: #000000;
+}
+
+.logo{
+position : absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%)
+}
+.responsive {
+    width:100%;
+    max-width: 700px;
+    height: auto;
+}
+
+.nav{
+    list-style:none;
+    bottom:0;
+    padding:0;
+    text-align:center;
+    overflow: hidden;
+}
+
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding:20px 30px;
+    text-decoration:none;
+    font-family: 'Contrail One', cursive;
+    color: white;
+    font-size: 17px;
+}
+
+.effect-1 a {
+	color: #a5b1c2;
+	font-weight: 700;
+	text-shadow: none;
+  text-decoration: none;
+}
+
+.effect-1 a::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.effect-1 a:hover::before,
+.effect-1 a:focus::before {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
+}
