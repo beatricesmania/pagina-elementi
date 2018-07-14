@@ -30,9 +30,10 @@ img:hover{
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
   }
+
   .im1{
     width:100%;
-    max-width: 600px;
+    max-width: 400px;
     height: auto;
     padding-bottom: 50px;
   }
@@ -56,7 +57,7 @@ img:hover{
     top: 20%;
     left:50%;
     transform: translate(-50%,-20%);
-    text-align: left;
+    text-align: center;
 
   }
 body{
