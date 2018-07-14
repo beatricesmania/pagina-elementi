@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  #box{
+    position:absolute;
+    width: 300px;
+    height: 300px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  #q1{
+    background-color: red;
+  }
+
+  #q2{
+    background-color: yellow;
+  }
+
+  #q3{
+    background-color: green;
+  }
+
+  #q4{
+    background-color: blue;
+  }
+
+  .quadrato{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  .sx{
+    left:0;
+  }
+
+  .dx{
+    right: 0;
+  }
+
+  .alto{
+    top:0;
+  }
+
+  .basso{
+    bottom:0;
+  }
+  .gira_tutto{
+    animation: rotazione 1s infinite linear;
+  }
+
+  @keyframes rotazione {
+    from{
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+      to{
+        transform: translate(-50%,-50%) rotate(360deg);
+      }
+  }
+  </style>
+  <link rel="stylesheet" href="es2.css">
+  <script src=jquery.js></script>
+</head>
+<body>
+  <div id="box">
+  <div id="q1" class="quadrato sx alto"></div>
+  <div id="q2" class="quadrato dx alto"></div>
+  <div id="q3" class="quadrato sx basso"></div>
+  <div id="q4" class="quadrato dx basso"></div>
+</div>
+  <script>
+
+  function scambia(){
+    $("#q1").removeClass("sx");
+    $("#q1").addClass("dx");
+    $("#q2").removeClass("dx");
+    $("#q2").addClass("sx");
+  }
+  function ruota(){
+    $("#box").addClass("gira_tutto");
+  }
+  function ferma(){
+    $("#box").removeClass("gira_tutto");
+  }
+
+  function al_click(){
+    if($("#q1").hasClass("sx"))
+    scambia();
+    else if ($("#q1").hasClass("dx"))
+    ruota();
+  }
+
+  function mouse(){
+    if ($("#box").hasClass("gira_tutto"))
+    ferma();
+  }
+
+  $("#q1").click(al_click);
+  $("#q1").hover(mouse);
+  $("#q2").hover(mouse);
+  $("#q3").hover(mouse);
+  $("#q4").hover(mouse);
+</script>
+</body>
+</html>

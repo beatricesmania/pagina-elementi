@@ -1,6 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto');
-@import url('https://fonts.googleapis.com/css?family=Contrail+One');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 html{}
 
@@ -29,7 +28,7 @@ html{}
 }
 
 body{
-  background-color: #000000;
+  background-color: #0D1317;
 }
 
 .logo{
@@ -60,12 +59,11 @@ transform: translate(-50%,-50%)
     padding:20px 30px;
     text-decoration:none;
     font-family: 'Contrail One', cursive;
-    color: white;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .effect-1 a {
-	color: #a5b1c2;
+	color: #090C9B;
 	font-weight: 700;
 	text-shadow: none;
   text-decoration: none;

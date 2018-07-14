@@ -1,0 +1,106 @@
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <style>
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .q {
+    background-color: #623CEA;
+    height: 33vh;
+    width: 33vh;
+  }
+
+  .qino-off {
+    height: 0vh;
+    width: 0vh;
+  }
+
+  .qino-on {
+    background-color: #815FFC;
+    height: 16vh;
+    width: 16vh;
+  }
+
+  .rotate {
+    -webkit-animation: rotation 0.5s forwards;
+  }
+
+  .rotate-orario {
+    -webkit-animation: orario 1s infinite linear;
+  }
+
+  .rotate-antiorario {
+    -webkit-animation: antiorario 1s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: translate(-50%, -50%)
+  rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+  }
+
+  @keyframes orario {
+    from {
+      transform: translate(-50%, -50%)
+  rotate(0deg);
+  }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes antiorario {
+    from {
+      transform: translate(-50%, -50%)
+  rotate(0deg);
+  }
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+  /* Inizialmente il problema è che il quadrato non gira con un centro
+  di rotazione centrale ma gira in bassto a destra
+  Per risolvere si può aggiungere translate sia al from che al to */
+  </style>
+</head>
+<body>
+<div id="quadrato" class="q center"></div>
+<div id="quadratino" class="qino-off center"></div>
+<script>
+
+function ruota_quadrato_rosso() {
+  $("#quadrato").addClass("rotate");
+}
+
+function disegna_quadrato_giallo() {
+  $("#quadratino").addClass("qino-on");
+}
+
+function ruota_tutto() {
+  $("#quadrato").addClass("rotate-orario");
+  $("#quadratino").addClass("rotate-antiorario");
+}
+
+function al_click() {
+  if($("#quadratino").hasClass("qino-on"))
+    ruota_tutto();
+  else if($("#quadrato").hasClass("rotate"))
+    disegna_quadrato_giallo();
+  else
+    ruota_quadrato_rosso();
+}
+
+$("#quadrato").click(al_click);
+
+</script>
+</body>
+</html>

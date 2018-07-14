@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <style>
+  .q{
+    transition: 1s all;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+  }
+
+  #quadrato{
+      height: 50px;
+      width: 50px;
+      background-color: green;
+  }
+  .center{
+    transition: 1s all;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .c{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: blue;
+  }
+
+  .off{
+    transition: 1s all;
+    position: absolute;
+    top:50%;
+    left:110%;
+    transform: translate(0%,-50%);
+  }
+
+  .spin{
+    animation: rotazione 1s infinite linear;
+  }
+
+  @keyframes rotazione {
+    from{
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+      transform: translate(-50%,-50%) rotate(360deg);
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div id="quadrato" class="center"></div>
+  <div id="cerchio" class="c off stop"></div>
+<script>
+  function esce_q(){
+    $("#quadrato").removeClass("center");
+    $("#quadrato").addClass("off");
+    $("#cerchio").removeClass("off");
+    $("#cerchio").addClass("center");
+  }
+
+  function entra_q(){
+    $("#cerchio").removeClass("center");
+    $("#quadrato").removeClass("off");
+    $("#quadrato").addClass("center");
+    $("#cerchio").addClass("off");
+  }
+
+  function diventaq(){
+    $("#cerchio").removeClass("c");
+    $("#cerchio").addClass("q");
+  }
+
+  function al_click(){
+    if($("#quadrato").hasClass("center")){
+    esce_q();
+  }
+    else if ($("#cerchio").hasClass("c")){
+    diventaq();
+  }
+    else if ($("#cerchio").hasClass("stop")){
+    $("#cerchio").addClass("spin");
+    $("#cerchio").removeClass("stop");
+  }
+    else if ($("#cerchio").hasClass("spin")){
+    entra_q();
+  }
+  }
+
+  $("#quadrato").click(al_click);
+  $("#cerchio").click(al_click);
+
+  </script>
+</body>
+</html>

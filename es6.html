@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  .quadrato{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  }
+
+  #q1.quadrato{
+    background-color: blue;
+  }
+
+  #q2.quadrato{
+    background-color: red;
+  }
+
+  #q3.quadrato{
+    background-color: yellow;
+  }
+
+  #q4.quadrato{
+    background-color: green;
+  }
+
+  #q1.posizione{
+    top:0;
+    left:0;
+  }
+
+  #q2.posizione{
+    top:0;
+    right:0;
+  }
+
+  #q3.posizione{
+    bottom:0;
+    left:0;
+  }
+
+  #q4.posizione{
+    bottom:0%;
+    right: 0%;
+  }
+
+  .center{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .oscilla{
+    animation: oscillazione 2s infinite linear;
+  }
+
+  @keyframes oscillazione {
+      from { left: 50%;}
+      25% {left: 25%;}
+      50% {left: 50%;}
+      75% {left: 75%;}
+      to {left: 50%;}
+  }
+
+  </style>
+  <script src=jquery.js></script>
+</head>
+<body>
+  <div id="q1" class="quadrato posizione"></div>
+  <div id="q2" class="quadrato posizione"></div>
+  <div id="q3" class="quadrato posizione"></div>
+  <div id="q4" class="quadrato posizione"></div>
+  <script>
+
+  function porta_al_centro_q1(){
+    $("#q1").addClass("center");
+    $("#q1").removeClass("posizione");
+  }
+  function oscillare_q1(){
+    $("#q1").addClass("oscilla");
+  }
+
+  function porta_al_centro_q2(){
+    $("#q2").addClass("center");
+    $("#q2").removeClass("posizione");
+  }
+  function oscillare_q2(){
+    $("#q2").addClass("oscilla");
+    }
+
+  function porta_al_centro_q3(){
+    $("#q3").addClass("center");
+    $("#q3").removeClass("posizione");
+  }
+
+    function oscillare_q3(){
+      $("#q3").addClass("oscilla");
+    }
+
+  function porta_al_centro_q4(){
+    $("#q4").addClass("center");
+    $("#q4").removeClass("posizione");
+  }
+
+  function oscillare_q4(){
+  $("#q4").addClass("oscilla");
+  }
+
+  function click_q1(){
+    if ($("#q1").hasClass("posizione"))
+    porta_al_centro_q1();
+    else if ($("#q1").hasClass("center"))
+    oscillare_q1();
+  }
+
+  function click_q2(){
+    if ($("#q2").hasClass("posizione"))
+    porta_al_centro_q2();
+    else if ($("#q2").hasClass("center"))
+    oscillare_q2();
+  }
+
+  function click_q3(){
+    if ($("#q3").hasClass("posizione"))
+    porta_al_centro_q3();
+    else if ($("#q3").hasClass("center"))
+    oscillare_q3();
+  }
+
+  function click_q4(){
+    if ($("#q4").hasClass("posizione"))
+    porta_al_centro_q4();
+    else if ($("#q4").hasClass("center"))
+    oscillare_q4();
+  }
+
+  $("#q1").click(click_q1);
+  $("#q2").click(click_q2);
+  $("#q3").click(click_q3);
+  $("#q4").click(click_q4);
+</script>
+</body>
+</html>

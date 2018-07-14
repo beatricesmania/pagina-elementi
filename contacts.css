@@ -1,50 +1,39 @@
-htlm{}
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  float: left;
+  }
+
+.title{
+    font-family: 'Playfair Display';
+    font-size: 100px;
+    font-weight: 700;
+    color: #09159B;
+    position:fixed;
+    top:15vh;
+    left:-5vw;
+  }
 
 body{
-  background-color: white;
+  font-family: 'Karla', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-
-.nav{
-    list-style:none;
-    bottom:0;
-    padding:0;
-    text-align:center;
-    overflow: hidden;
+#container{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: left;
 }
-
-.nav li{
-    display:inline;
-}
-.nav a{
-    display:inline-block;
-    padding:20px 30px;
-    text-decoration:none;
-    font-family: 'Contrail One', cursive;
-    color: white;
-    font-size: 17px;
-}
-
-.effect-1 a {
-	color: #a5b1c2;
-	font-weight: 700;
-	text-shadow: none;
-  text-decoration: none;
-}
-
-.effect-1 a::before {
-	color: #000000;
-	content: attr(data-hover);
-	position: absolute;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
-}
-
-.effect-1 a:hover::before,
-.effect-1 a:focus::before {
-	-webkit-transform: scale(0.9);
-	-moz-transform: scale(0.9);
-	transform: scale(0.9);
-	opacity: 0;
+.r{
+  height: 100px;
+  width: 50px;
 }

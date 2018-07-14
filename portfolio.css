@@ -1,50 +1,103 @@
-htlm{}
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
-body{
-  background-color: white;
+img{
+  transition: 0.5s all ease;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
-
+img:hover{
+    transition: 1s all ease;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
 .nav{
     list-style:none;
-    bottom:0;
-    padding:0;
-    text-align:center;
+    text-align:right;
     overflow: hidden;
 }
 
-.nav li{
-    display:inline;
-}
+
 .nav a{
-    display:inline-block;
-    padding:20px 30px;
-    text-decoration:none;
-    font-family: 'Contrail One', cursive;
-    color: white;
-    font-size: 17px;
+    font-family: 'Playfair Display';
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  }
+  .im1{
+    width:100%;
+    max-width: 600px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+#title{
+    font-family: 'Playfair Display';
+    font-size: 120px;
+    font-weight: 700;
+    color: #09159B;
+    position:fixed;
+    top:7%;
+    left:0vw;
+    margin-left: 0%;
+    padding: 0%;
+
+  }
+
+  #container2{
+    position: absolute;
+    height: 50%;
+    max-width: 600px;
+    top: 20%;
+    left:50%;
+    transform: translate(-50%,-20%);
+    text-align: left;
+
+  }
+body{
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+
+
+.altodx{
+  position: fixed;
+  top:10%;
+  right:10%;
+  transform: translate(0%,-10%);
 }
 
 .effect-1 a {
-	color: #a5b1c2;
-	font-weight: 700;
+	color: #09159B;
+	font-weight: 400;
 	text-shadow: none;
   text-decoration: none;
 }
 
 .effect-1 a::before {
-	color: #000000;
+  color: #000000;
 	content: attr(data-hover);
 	position: absolute;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
 }
 
 .effect-1 a:hover::before,
 .effect-1 a:focus::before {
-	-webkit-transform: scale(0.9);
-	-moz-transform: scale(0.9);
-	transform: scale(0.9);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
 	opacity: 0;
 }

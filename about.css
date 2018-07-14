@@ -1,44 +1,95 @@
-htlm{}
-
-body{
-  background-color: white;
-}
-
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 .nav{
     list-style:none;
-    bottom:0;
-    padding:0;
-    text-align:center;
+    text-align:right;
     overflow: hidden;
 }
 
-.nav li{
-    display:inline;
-}
+
 .nav a{
-    display:inline-block;
-    padding:20px 30px;
-    text-decoration:none;
-    font-family: 'Contrail One', cursive;
-    color: white;
-    font-size: 17px;
+    font-family: 'Playfair Display';
+    font-size: 40px;
+    font-weight: 700;
 }
 
+
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  }
+
+#title{
+    font-family: 'Playfair Display';
+    font-size: 120px;
+    font-weight: 700;
+    color: #09159B;
+    position:fixed;
+    top:5%;
+    left:0vw;
+    margin-left: 0%;
+    padding: 0%;
+
+  }
+body{
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+.im1{
+  width:100%;
+  max-width: 600px;
+  height: auto;
+}
+#container2{
+  position: absolute;
+  height: 50%;
+  max-width: 600px;
+  top: 20%;
+  left:50%;
+  transform: translate(-50%,-20%);
+  text-align: left;
+
+}
+
+.altodx{
+  position: fixed;
+  top:10%;
+  right:10%;
+  transform: translate(0%,-10%);
+}
+#s{
+
+  font-weight: 700;
+  font-size: 30px;
+    margin-bottom: 0%;
+}
+
+#big{
+  color: #09159B;
+  font-weight: 700;
+  font-size: 60px;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
 .effect-1 a {
-	color: #a5b1c2;
-	font-weight: 700;
+	color: #090C9B;
+	font-weight: 400;
 	text-shadow: none;
   text-decoration: none;
 }
 
 .effect-1 a::before {
-	color: #000000;
+  color: #000000;
 	content: attr(data-hover);
 	position: absolute;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
 }
 
 .effect-1 a:hover::before,

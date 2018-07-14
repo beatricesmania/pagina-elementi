@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  #stella{
+    background-color: yellow;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  #cielo{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  #cielo2{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .p{
+    background-color: blue;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .posizione{
+    top: 50%;
+    left:0%;
+    transform: translate(0%,-50%);
+  }
+
+  .p2{
+    background-color: red;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .posizione2{
+    top: 50%;
+    left:0%;
+    transform: translate(0%,-50%);
+  }
+
+  .orbita{
+    animation: spin-orario 1s infinite linear;
+  }
+  .orbita2{
+    animation: spin-antiorario 2s infinite linear;
+  }
+
+  @keyframes spin-orario {
+    from{
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+      transform: translate(-50%,-50%) rotate(360deg);
+    }
+  }
+
+  @keyframes spin-antiorario {
+    from{
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+      transform: translate(-50%,-50%) rotate(-360deg);
+    }
+  }
+
+  #cielo.orbita.contrario{
+    animation: spin-antiorario 1s infinite linear;
+  }
+
+  #cielo2.orbita2.contrario{
+    animation: spin-orario 2s infinite linear;
+  }
+
+  </style>
+  <script src="jquery.js"></script>
+</head>
+<body>
+  <div id="cielo">
+    <div id="pianeta" class="p posizione orbita"></div>
+  </div>
+  <div id="cielo2">
+    <div id="pianeta2" class="p2 posizione"></div>
+  </div>
+  <div id="stella"></div>
+  <script>
+
+  var stato=0;
+
+
+  function al_click() {
+
+  if(stato == 0) {
+      $("#cielo").addClass("orbita");
+      stato = 1;
+    } else if(stato == 1) {
+      $("#cielo2").addClass("orbita2");
+      stato = 2;
+      } else if(stato == 2) {
+      $("#cielo").addClass("contrario");
+      $("#cielo2").addClass("contrario");
+      stato = 3;
+    }
+  }
+
+  $("#stella").click(al_click);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+  <script src="jquery.js"></script>
+  <style>
+  #quadrato{
+  	position: absolute;
+  	width:50px;
+  	height:50px;
+  	background-color:#1133A3;
+  }
+
+  #quadrato.left{
+  	transition: 1s all;
+  	top:30vh;
+  	left:30vw;
+  }
+
+  #quadrato.right{
+  	transition: 1s all;
+  	top:30vh;
+  	left: 60vw;
+  }
+
+  #quadrato.bottom-right{
+  	transition: 1s all;
+  	top: 60vh;
+  	left: 60vw;
+  }
+
+  #quadrato.bottom-left{
+  	transition: 1s all;
+  	top:60vh;
+  	left: 30vw;
+  }
+
+  </style>
+</head>
+<body>
+<div id="quadrato" class="left"></div>
+<script>
+function spostadx(){
+  $("#quadrato").removeClass("left");
+  $("#quadrato").addClass("right")
+}
+
+function spostasx(){
+  $("#quadrato").removeClass("right");
+  $("#quadrato").addClass("left")
+}
+function spostabottomdx(){
+  $("#quadrato").removeClass("right");
+  $("#quadrato").addClass("bottom-right")
+}
+function spostabottomsx(){
+  $("#quadrato").removeClass("bottom-right");
+  $("#quadrato").addClass("bottom-left")
+}
+function spostainizio(){
+  $("#quadrato").removeClass("bottom-left");
+  $("#quadrato").addClass("left")
+}
+
+function quandoclick(){
+  if($("#quadrato").hasClass("left")){
+    spostadx()
+    } else if ($("#quadrato").hasClass("right")){
+      spostabottomdx()
+    }
+      else if ($("#quadrato").hasClass("bottom-right")){
+        spostabottomsx()
+      }
+        else if ($("#quadrato").hasClass("bottom-left")){
+          spostainizio()
+        }
+}
+
+$("#quadrato").on("click", quandoclick);
+
+
+</script>
+</body>
+</html>

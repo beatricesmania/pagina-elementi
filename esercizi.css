@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+body{
+  font-family: 'Karla', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+a{
+  text-decoration: none;
+  text-shadow: none;
+  color: #09159B;
+}
+
+a::after{
+  color:#09159B;
+}
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+.nav{
+    list-style:none;
+    text-align:right;
+    overflow: hidden;
+}
+
+.nav a{
+    font-family: 'Playfair Display';
+    font-size: 40px;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+}
+
+  #container2{
+    position: absolute;
+    height: 50%;
+    max-width: 600px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+  color: #09159B;
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+  color: #09159B;
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+  color: #09159B;
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+  color: #09159B;
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
