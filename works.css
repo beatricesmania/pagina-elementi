@@ -12,18 +12,14 @@ img:hover{
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
 }
+
 .nav{
     list-style:none;
     text-align:right;
     overflow: hidden;
-}
-
-
-.nav a{
-    font-family: 'Playfair Display';
+    font-family: 'Karla';
     font-size: 40px;
     font-weight: 700;
-    color: #000000;
 }
 
 
@@ -80,7 +76,7 @@ body{
 
 .effect-1 a {
 	color: #09159B;
-	font-weight: 400;
+	font-weight: 700;
 	text-shadow: none;
   text-decoration: none;
 }
@@ -89,9 +85,9 @@ body{
   color: #000000;
 	content: attr(data-hover);
 	position: absolute;
-	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
-	transition: transform 0.5s, opacity 0.5s;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.3s;
+	transition: transform 0.5s, opacity 0.3s;
 }
 
 .effect-1 a:hover::before,
