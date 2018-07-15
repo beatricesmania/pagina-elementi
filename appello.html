@@ -1,0 +1,119 @@
+<html>
+<head>
+  <style>
+  .q{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+  }
+  .q-on{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+  }
+
+  .center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  .rettangolo{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+  }
+  .ret{
+    transition: 1s all ease;
+    width: 50px;
+    height: 100px;
+    background-color: blue;
+  }
+  .q-ino{
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+  }
+  .q-off{
+    height: 0%;
+    width: 0%;
+  }
+  .up{
+    top:0%;
+    left:50%;
+  }
+  .down{
+    position: absolute;
+    top:100%;
+    left:50%;
+  }
+
+  .ruota{
+    animation: rotation 1s infinite linear;
+  }
+
+  @keyframes rotation{
+    from{
+      transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+  }
+
+  </style>
+  <script src=jquery.js></script>
+</head>
+<body>
+  <div id="quadrato" class="q center"></div>
+  <div id="rettangolo" class="q-off center">
+    <div id="q2" class="q-off up"></div>
+    <div id="q3" class="q-off down"></div>
+  </div>
+<script>
+  function rettangolo(){
+  $("#quadrato").removeClass("q");
+  $("#quadrato").addClass("ret");
+  }
+
+  function scomponi_e_ruota(){
+  $("#quadrato").removeClass("ret")
+  $("#quadrato").addClass("q-off");
+  $("#rettangolo").removeClass("q-off");
+  $("#rettangolo").addClass("rettangolo");
+  $("#q2").addClass("q-ino");
+  $("#q3").addClass("q-ino");
+  $("#q2").removeClass("q-off");
+  $("#q3").removeClass("q-off");
+  $("#q2").addClass("ruota");
+  $("#q3").addClass("ruota");
+  }
+  function collasso(){;
+  $("#q2").removeClass("q-ino");
+  $("#q3").removeClass("q-ino");
+  $("#q2").addClass("q-off");
+  $("#q3").addClass("q-off");
+  $("#q2").removeClass("ruota");
+  $("#q3").removeClass("ruota");
+  $("#quadrato").removeClass("q-off");
+  $("#quadrato").addClass("q-on");
+  $("#quadrato").addClass("ruota");
+  $("#quadrato").addClass("center");
+  }
+
+  function al_click(){
+    if($("#quadrato").hasClass("q"))
+    rettangolo();
+    else if ($("#quadrato").hasClass("ret"))
+    scomponi_e_ruota();
+    else if ($("#q2").hasClass("q-ino"))
+    collasso();
+  }
+
+  $("#quadrato").click(al_click);
+  $("#q2").click(al_click);
+  $("#q3").click(al_click);
+</script>
+</body>
+</html>

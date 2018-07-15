@@ -32,7 +32,6 @@
   }
 
   .nav a{
-      font-family: 'Playfair Display';
       font-size: 40px;
       font-weight: 700;
       display: inline-block;
@@ -45,48 +44,60 @@
       max-width: 600px;
       top: 50%;
       left:50%;
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
       transform: translate(-50%,-50%);
       text-align: center;
       margin-bottom: 50px;
     }
 
-  /* Effect 1: Brackets */
-  .cl-effect-1 a::before,
-  .cl-effect-1 a::after {
+  /* Effetto 2 */
+  .effetto-2 a::before,
+  .effetto-2 a::after {
     color: #09159B;
     display: inline-block;
     opacity: 0;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -ms-transition: -ms-transform 0.3s, opacity 0.2s;
+    -o-transition: -o-transform 0.3s, opacity 0.2s;
     -moz-transition: -moz-transform 0.3s, opacity 0.2s;
     transition: transform 0.3s, opacity 0.2s;
   }
 
-  .cl-effect-1 a::before {
+  .effetto-2 a::before {
     color: #09159B;
     margin-right: 10px;
     content: '[';
     -webkit-transform: translateX(20px);
     -moz-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    -ms-transform: translateX(20px);
     transform: translateX(20px);
   }
 
-  .cl-effect-1 a::after {
+  .effetto-2 a::after {
     color: #09159B;
     margin-left: 10px;
     content: ']';
     -webkit-transform: translateX(-20px);
     -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
     transform: translateX(-20px);
   }
 
-  .cl-effect-1 a:hover::before,
-  .cl-effect-1 a:hover::after,
-  .cl-effect-1 a:focus::before,
-  .cl-effect-1 a:focus::after {
+  .effetto-2 a:hover::before,
+  .effetto-2 a:hover::after,
+  .effetto-2 a:focus::before,
+  .effetto-2 a:focus::after {
     color: #09159B;
     opacity: 1;
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
     transform: translateX(0px);
   }
 
@@ -95,13 +106,15 @@
 <body>
 
   <div id="container2">
-    <nav class="cl-effect-1" id="cl-effect-1">
+    <nav class="effetto-2">
       <a href="es1.html" target="_blank">1st EXERCISE</a><br>
       <a href="es2.html" target="_blank">2nd EXERCISE</a><br>
       <a href="es3.html" target="_blank">3rd EXERCISE</a><br>
       <a href="es4.html" target="_blank">4th EXERCISE</a><br>
       <a href="es6.html" target="_blank">6th EXERCISE</a><br>
-      <a href="quad.html" target="_blank">7th EXERCISE</a>
+      <a href="quad.html" target="_blank">7th EXERCISE</a><br>
+      <a href="appello.html" target="_blank">8th EXERCISE</a><br>
+      <a href="spinners.html" target="_blank">SPINNERS</a><br>
     </nav>
   </div>
 

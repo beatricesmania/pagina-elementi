@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700,700i');
 
 .nav{
     list-style:none;
@@ -20,9 +19,10 @@
   }
 
 #title{
-    font-family: 'Playfair Display';
+    font-family: 'Karla';
     font-size: 120px;
     font-weight: 700;
+    font-style: italic;
     color: #09159B;
     position:fixed;
     top:5%;
@@ -48,6 +48,10 @@ body{
   top: 20%;
   left:50%;
   transform: translate(-50%,-20%);
+  -moz-transform: translate(-50%,-20%);
+  -o-transform: translate(-50%,-20%);
+  -webkit-transform: translate(-50%,-20%);
+  -ms-transform: translate(-50%,-20%);
   text-align: left;
 
 }
@@ -57,6 +61,10 @@ body{
   top:10%;
   right:10%;
   transform: translate(0%,-10%);
+  -webkit-transform: translate(0%,-10%);
+  -moz-transform: translate(0%,-10%);
+  -ms-transform: translate(0%,-10%);
+  -o-transform: translate(0%,-10%);
 }
 #s{
 
@@ -66,31 +74,28 @@ body{
 }
 
 #big{
+  transition: 0.3s all;
   color: #09159B;
   font-weight: 700;
   font-size: 60px;
   padding-bottom: 0%;
   margin-bottom: 0%;
 }
-
+/*effetto link*/
 .effect-1 a {
-	color: #090C9B;
-	text-shadow: none;
-  text-decoration: none;
-}
-#social.effect-1 a {
-	color: #090C9B;
-	font-weight: 400;
+	color: #DCE2E8;
 	text-shadow: none;
   text-decoration: none;
 }
 
 .effect-1 a::before {
-  color: #000000;
+  color: #09159B;
 	content: attr(data-hover);
 	position: absolute;
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
 	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+  -o-transition: -o-transform 0.5s, opacity 0.5s;
+  -ms-transition: -ms-transform 0.5s, opacity 0.5s;
 	transition: transform 0.5s, opacity 0.5s;
 }
 
@@ -98,6 +103,40 @@ body{
 .effect-1 a:focus::before {
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
 	transform: scale(0.8);
 	opacity: 0;
+}
+/*effetto link social*/
+.effect-1-s a {
+	color: #DCE2E8;
+	text-shadow: none;
+  text-decoration: none;
+}
+
+.effect-1-s a::before {
+  color: #000000;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	-moz-transition: -moz-transform 0.5s, opacity 0.5s;
+  -o-transition: -o-transform 0.5s, opacity 0.5s;
+  -ms-transition: -ms-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.effect-1-s a:hover::before,
+.effect-1-s a:focus::before {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0;
+}
+
+#big:hover{
+  transition: 0.3s ease-out;
+  font-size: 100px;
 }
